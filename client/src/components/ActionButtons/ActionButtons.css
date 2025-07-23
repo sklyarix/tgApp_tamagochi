@@ -1,0 +1,216 @@
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  gap: 16px;
+}
+
+.action-button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.action-button-wrapper {
+  position: relative;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  filter: drop-shadow(0px 6px 0px #c58848);
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+.action-button {
+  width: 70px;
+  height: 70px;
+  border-radius: 22px;
+  background: linear-gradient(180deg, #fff9f1 0%, #f5e2c9 100%);
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: inset 0px 0px 8px 0px #ffffff;
+  transition: all 0.2s ease;
+  padding: 0;
+  position: absolute;
+  z-index: 2;
+}
+
+.action-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.7) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 22px;
+}
+
+.action-button:hover::before {
+  opacity: 1;
+}
+
+.action-icon {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.2));
+  transition: transform 0.2s ease;
+}
+
+.action-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #7a4f3b;
+  font-family: 'Inter Tight', Arial, sans-serif;
+  text-align: center;
+  text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.8);
+}
+
+.action-button:hover:not(:disabled) {
+  transform: translateY(-3px);
+}
+
+.action-button:hover:not(:disabled) .action-icon {
+  transform: scale(1.1);
+}
+
+.action-button:active:not(:disabled) {
+  transform: translateY(3px);
+}
+
+.action-button:active:not(:disabled) .action-icon {
+  transform: scale(0.95);
+}
+
+.pressed {
+  transform: translateY(3px) !important;
+}
+
+.pressed .action-icon {
+  transform: scale(0.95) !important;
+}
+
+/* Стили для круговой обводки */
+.progress-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotate(-90deg);
+  z-index: 3;
+  width: 70px;
+  height: 70px;
+  transition: all 0.2s ease;
+  pointer-events: none;
+}
+
+.progress-ring-circle-bg {
+  opacity: 0.5;
+  stroke: #dca876;
+  stroke-width: 4px;
+}
+
+.progress-ring-circle {
+  transition: stroke-dashoffset 0.1s linear;
+  transform-origin: center;
+  stroke: #ff5500;
+  stroke-width: 4px;
+  filter: drop-shadow(0px 0px 2px rgba(255, 255, 255, 0.5));
+}
+
+/* Стили для кнопки в состоянии перезарядки */
+.in-cooldown {
+  cursor: not-allowed;
+  opacity: 0.9;
+  background: linear-gradient(180deg, #f9f0e2 0%, #edd6b8 100%);
+}
+
+.in-cooldown:hover {
+  transform: none;
+}
+
+.in-cooldown:hover .action-icon {
+  transform: none;
+}
+
+/* Перемещение кольца прогресса вместе с кнопкой */
+.action-button:hover:not(:disabled) ~ .progress-ring {
+  transform: translateY(-3px) rotate(-90deg);
+}
+
+.action-button:active:not(:disabled) ~ .progress-ring,
+.pressed ~ .progress-ring {
+  transform: translateY(3px) rotate(-90deg);
+}
+
+/* Форма кнопок как на изображении (закругленный квадрат) */
+.action-button {
+  border-radius: 22px;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes complete {
+  0% {
+    box-shadow: 0px 0px 0px 0px rgba(255, 156, 77, 0.8);
+  }
+  100% {
+    box-shadow: 0px 0px 15px 10px rgba(255, 156, 77, 0);
+  }
+}
+
+.complete-animation::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 22px;
+  animation: complete 0.8s ease-out;
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* Стиль для touch устройств */
+@media (hover: none) {
+  .action-button:hover:not(:disabled) {
+    transform: none;
+  }
+
+  .action-button:hover:not(:disabled) .action-icon {
+    transform: none;
+  }
+
+  .action-button:hover::before {
+    opacity: 0;
+  }
+
+  .action-button:hover:not(:disabled) ~ .progress-ring {
+    transform: rotate(-90deg);
+  }
+}

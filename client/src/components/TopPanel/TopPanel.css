@@ -1,0 +1,61 @@
+.top-panel {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 39px;
+}
+
+.stats-group {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.stat-item {
+  padding: 10px 11px;
+  border-radius: 24px;
+  background-color: #FFFFFF;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 36px;
+}
+
+/* Стили для кнопки уровня */
+.top-panel > .stat-item {
+  box-shadow: inset 0px 0px 5px 0px rgba(255, 255, 255, 1);
+}
+
+.stat-item-content {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.stat-icon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.stat-value {
+  font-family: 'Inter Tight', Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #000;
+  white-space: nowrap;
+}
+
+/* Стиль для текста в кнопке уровня */
+.top-panel > .stat-item .stat-value {
+  color: #FFF;
+}
+
+/* Определение ширины для элементов статистики */
+.stats-group .stat-item .stat-item-content {
+  display: flex;
+  justify-content: space-between;
+} 

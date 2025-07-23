@@ -1,0 +1,33 @@
+# Node
+node_modules/
+dist/
+build/
+.cache/
+
+# Prisma
+prisma/dev.db
+prisma/*.sqlite
+prisma/*.db
+# prisma/migrations/ 
+
+# Env
+.env
+.env.local
+.env.*.local
+
+# Logs
+logs/
+*.log
+
+# System
+.DS_Store
+
+# Editors
+.vscode/
+.idea/
+
+# TypeScript
+*.tsbuildinfo
+
+# Test / coverage
+coverage/

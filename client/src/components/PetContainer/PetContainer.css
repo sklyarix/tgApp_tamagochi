@@ -1,0 +1,48 @@
+.pet-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  z-index: 2;
+}
+
+.pet-image {
+  width: 70%;
+  max-width: 250px;
+  margin-bottom: 30px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.pet-image:hover {
+  transform: scale(1.02);
+}
+
+.pet-image:active {
+  transform: scale(0.98);
+}
+
+.pet-status-text {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  color: #7A4F3B;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 8px 16px;
+  border-radius: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  width: auto;
+  max-width: 90%;
+}
+
+.pet-progress-bar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+} 

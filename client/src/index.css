@@ -1,0 +1,52 @@
+:root {
+  font-family: Arial, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* TG */
+  --tg-theme-header-bg-color: #111a28;
+  --tg-color-scheme: dark;
+  --tg-theme-bg-color: #1a293f;
+  --tg-theme-accent-text-color: #007aff;
+  --tg-theme-section-header-text-color: #b1c3d5;
+  --tg-theme-section-bg-color: #1a293f;
+  --tg-theme-button-text-color: #ffffff;
+  --tg-theme-section-separator-color: #1f314c;
+  --tg-theme-bottom-bar-bg-color: #131d2d;
+  --tg-theme-secondary-bg-color: #111a28;
+  --tg-theme-subtitle-text-color: #b1c3d5;
+  --tg-theme-link-color: #007aff;
+  --tg-theme-button-color: #007aff;
+  --tg-theme-destructive-text-color: #ef5b5b;
+  --tg-theme-hint-color: #b1c3d5;
+  --tg-theme-text-color: #ffffff;
+  --tg-viewport-height: 100vh;
+  --tg-viewport-stable-height: 100vh;
+  --tg-content-safe-area-inset-top: 0px;
+  --tg-content-safe-area-inset-bottom: 0px;
+  --tg-content-safe-area-inset-left: 0px;
+  --tg-content-safe-area-inset-right: 0px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  color: var(--tg-theme-text-color);
+}
+
+body {
+  background-color: #dca876;
+}
+html {
+  font-size: 16px;
+  line-height: 1.5;
+}
